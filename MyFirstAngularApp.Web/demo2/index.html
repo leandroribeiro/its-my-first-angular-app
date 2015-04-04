@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app>
+<head>
+    <title>Utilizando Controller e $scope </title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" ng-controller="MeuController">
+        <h1>{{Title}}</h1>
+        <ul>
+            <li ng-repeat="item in Itens">{{item.id}} - {{item.title}}</li>
+        </ul>
+        <br/>
+        <hr /> 
+        <br />
+        <input id="txtMensagemAlerta" class="form-control col-md-4" ng-model="mensagem" placeholder="Mensagem do Alerta" type="text" />
+        <hr />
+        <button class="btn btn-primary" ng-click="disparaAlerta()">Alerta Padrão</button>
+        <button class="btn btn-primary" ng-click="disparaAlertaPersonalizado(mensagem)">Alerta Personalizado</button>
+        <button class="btn btn-primary" ng-click="adicionaItem(mensagem)">Adicionar Item</button>
+    </div>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script>
+        function MeuController($scope) {
+            $scope.Title = "Meus itens";
+            $scope.Itens = [
+                { id: 1, title: 'Item 01' },
+                { id: 2, title: 'Item 02' },
+                { id: 3, title: 'Item 03' },
+                { id: 4, title: 'Item 04' },
+            ];
+
+            $scope.disparaAlerta = function () {
+                alert('Olá');
+            };
+
+            $scope.disparaAlertaPersonalizado = function (mensagem) {
+                alert(mensagem);
+            };
+
+            $scope.adicionaItem = function (mensagem) {
+                var id = $scope.Itens.length + 1;
+                $scope.Itens.push({id:id, title:mensagem});
+            };
+
+        }
+    </script>
+</body>
+</html>
