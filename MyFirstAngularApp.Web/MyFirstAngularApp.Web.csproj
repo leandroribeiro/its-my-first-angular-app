@@ -65,6 +65,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="demo1\index.html" />
     <Content Include="demo2\index.html" />
+    <Content Include="demo3\index.html" />
+    <Content Include="demo4\index.html" />
+    <Content Include="demo5\index.html" />
+    <Content Include="demo5\my-customer-badge.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\angular-animate.js" />
@@ -871,6 +875,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="demo6\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
