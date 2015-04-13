@@ -63,6 +63,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="demo-youtube\index.html" />
+    <Content Include="demo-youtube\references.txt" />
     <Content Include="demo1\index.html" />
     <Content Include="demo2\index.html" />
     <Content Include="demo3\index.html" />

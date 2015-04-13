@@ -7,10 +7,33 @@
 </head>
 <body>
     <div ng-controller="MeuController">
-    	<h1>{{title}</h1>
-    	<input>
-    	<ul>	
+        <h1>{{title}} - {{remaining()}} tarefa(s) restante(s)</h1>
+        <input type="text" name="txtFiltrar" value="" placeholder="Filtrar" ng-model="search" />
+        <ul ng-repeat="todo in todos | filter: search">
+            <li>
+                <input type="checkbox" name="chkDone" ng-model="todo.done" />
+                {{todo.text}}
+            </li>
+        </ul>
     </div>
-    
+    <script type="text/javascript">
+        function MeuController($scope) {
+            $scope.title = "Minha Primeira App";
+
+            $scope.todos = [
+                { text: "tarefa 1", done: true },
+                { text: "todo 2", done: false },
+                { text: "todo 3", done: false },
+            ];
+
+            $scope.remaining = function () {
+                var count = 0;
+                angular.forEach($scope.todos, function (todo) {
+                    count += todo.done ? 0 : 1;
+                });
+                return count;
+            };
+        }
+    </script>
 </body>
 </html>
