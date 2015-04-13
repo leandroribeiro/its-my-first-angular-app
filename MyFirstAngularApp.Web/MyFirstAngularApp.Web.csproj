@@ -63,8 +63,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="demo-youtube\index.html" />
-    <Content Include="demo-youtube\references.txt" />
+    <Content Include="Content\bower-angular-translate-2.6.1\angular-translate.js" />
+    <Content Include="Content\bower-angular-translate-2.6.1\angular-translate.min.js" />
+    <Content Include="demo-filter\index.html" />
+    <Content Include="demo-filter\references.txt" />
+    <Content Include="demo-translate\index.html" />
     <Content Include="demo1\index.html" />
     <Content Include="demo2\index.html" />
     <Content Include="demo3\index.html" />
@@ -847,6 +850,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bower-angular-translate-2.6.1\bower.json" />
+    <Content Include="Content\bower-angular-translate-2.6.1\README.md" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

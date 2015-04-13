@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <title>AngularJS | Exemplo De Tradução</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    <script src="../Content/bower-angular-translate-2.6.1/angular-translate.min.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="HomeController">
+        <a href="#" translate="PORTUGUESE" ng-click="changeLanguage('pt')">ver em português</a>
+        <a href="#" translate="ENGLISH" ng-click="changeLanguage('en')">ver em inglês</a>
+        <h3 translate="REGISTER">registre-se</h3>
+        <label translate="NAME">Nome</label>
+        <input type="text" name="txtName" value="" placeholder="{{ 'INPUT_YOUR_NAME' | translate}}" />
+        <input type="submit" name="btnContinue" value="{{ 'CONTINUE' | translate }}" />
+    </div>
+
+    <script>
+        angular.module('app', ['pascalprecht.translate']);
+
+        angular.module('app').controller('HomeController', function ($scope, $translate)
+        {
+            $scope.title = "Angular JS Tradução";
+
+            $scope.changeLanguage = function (key) {
+                $translate.use(key);
+            };
+        });
+
+        angular.module('app').config(function ($translateProvider)
+        {
+            $translateProvider.preferredLanguage('en');
+        });
+
+        angular.module('app').config(function ($translateProvider)
+        {
+            $translateProvider.translations('en', {
+                REGISTER: 'register',
+                NAME: 'name',
+                INPUT_YOUR_NAME: 'input your name',
+                LANGUAGE: 'language',
+                PORTUGUESE: 'see in portuguese',
+                ENGLISH: 'see in english',
+                CONTINUE: 'continue'
+            });
+        });
+
+        angular.module('app').config(function ($translateProvider) {
+            $translateProvider.translations('pt', {
+                REGISTER: 'registrar',
+                NAME: 'nome',
+                INPUT_YOUR_NAME: 'digite seu nome',
+                LANGUAGE: 'linguagem',
+                PORTUGUESE: 'ver em portugues',
+                ENGLISH: 'ver em inglês',
+                CONTINUE: 'continuar'
+            });
+        });
+
+    </script>
+</body>
+</html>
